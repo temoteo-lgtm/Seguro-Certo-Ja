@@ -2,6 +2,8 @@
 
 Portal institucional, responsivo e acessível para direcionar clientes aos fluxos oficiais de cotação da PIETY Corretora de Seguros.
 
+**Site publicado:** [piety-seguros-cotacao.lovable.app](https://piety-seguros-cotacao.lovable.app)
+
 ## Visão geral
 
 - 13 modalidades de seguro organizadas por categoria.
@@ -49,7 +51,7 @@ Depois, acesse `http://localhost:8080`.
 
 ## Publicação
 
-Pode ser publicado diretamente em GitHub Pages, Netlify, Cloudflare Pages ou importado no Lovable. Em GitHub Pages, selecione a branch `main` e a pasta raiz nas configurações de Pages.
+A versão de produção está publicada no Lovable. Este código estático também pode ser publicado diretamente em GitHub Pages, Netlify ou Cloudflare Pages. Em GitHub Pages, selecione a branch `main` e a pasta raiz nas configurações de Pages.
 
 ## Observação
 
