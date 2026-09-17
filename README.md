@@ -12,6 +12,8 @@ Portal institucional, responsivo e acessível para direcionar clientes aos fluxo
 - Elemento 3D em CSS no hero, sem dependências pesadas.
 - Layout mobile-first, navegação por teclado e suporte a `prefers-reduced-motion`.
 - CTA e botão flutuante para WhatsApp.
+- Identidade visual oficial da PIETY aplicada no cabeçalho e rodapé.
+- Dados cadastrais exibidos: CNPJ 57.596.795/0001-60 e registro SUSEP 242162581.
 - Sem banco de dados, autenticação ou coleta local de dados.
 
 ## Rodar localmente
