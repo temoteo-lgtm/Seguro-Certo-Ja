@@ -80,8 +80,13 @@ svg { display: block; fill: none; stroke: currentColor; stroke-linecap: round; s
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 
 .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
-.brand-logo-frame { position: relative; width: 224px; height: 58px; overflow: hidden; border: 1px solid rgba(239,216,151,.4); border-radius: 14px; background: #fffdf7; box-shadow: 0 10px 28px rgba(1,29,24,.18), inset 0 1px 0 white; }
-.brand-logo-frame img { position: absolute; top: 50%; left: 50%; width: 360px; max-width: none; height: 360px; object-fit: contain; transform: translate(-50%, -50%); }
+.brand-negative { gap: 10px; min-width: 0; transition: filter .2s ease; }
+.brand-negative:hover { filter: brightness(1.08); }
+.brand-symbol { position: relative; flex: 0 0 58px; width: 58px; height: 52px; overflow: hidden; }
+.brand-symbol img { position: absolute; width: 330px; max-width: none; height: 330px; left: -71px; top: -137px; object-fit: contain; }
+.brand-copy { display: grid; min-width: 0; line-height: 1; }
+.brand-copy strong { color: white; font-family: "Manrope", sans-serif; font-size: 27px; font-weight: 800; font-style: italic; letter-spacing: -.035em; }
+.brand-copy small { margin-top: 5px; color: var(--gold-300); font-family: "Manrope", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .015em; white-space: nowrap; }
 
 .desktop-nav { display: flex; align-items: center; gap: 31px; margin-left: auto; }
 .desktop-nav a { position: relative; color: rgba(255,255,255,.73); font-size: 14px; font-weight: 600; transition: color .2s; }
@@ -351,8 +356,11 @@ svg { display: block; fill: none; stroke: currentColor; stroke-linecap: round; s
 
 @media (max-width: 560px) {
   .container { width: min(calc(100% - 24px), var(--container)); }
-  .brand-logo-frame { width: 176px; height: 48px; border-radius: 12px; }
-  .brand-logo-frame img { width: 290px; height: 290px; }
+  .brand-negative { gap: 8px; }
+  .brand-symbol { flex-basis: 50px; width: 50px; height: 46px; }
+  .brand-symbol img { width: 292px; height: 292px; left: -63px; top: -121px; }
+  .brand-copy strong { font-size: 23px; }
+  .brand-copy small { margin-top: 4px; font-size: 8px; }
   .hero { padding-top: 112px; }
   .hero h1 { font-size: clamp(43px, 13vw, 58px); }
   .hero-copy > p { font-size: 16px; }
