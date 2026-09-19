@@ -1,0 +1,32 @@
+# Roadmap
+
+- [x] Preparar e instalar a logo oficial otimizada e o favicon correspondente.
+- [x] Atualizar cabeçalho, rodapé, dados legais e os três passos.
+- [x] Validar 13 destinos de cotação e layout em desktop e 360 px.
+- [x] Confirmar a validação final do projeto sem erros.
+- [x] Criar assinatura negativa transparente derivada da arte oficial.
+- [x] Substituir a apresentação da marca no cabeçalho e rodapé sem alterar o restante.
+- [x] Validar a marca em desktop e 360 px e executar o build.
+- [x] Refinar os ícones dos 13 seguros com linguagem PIETY e acento dourado.
+- [x] Ampliar o hero para seis ícones em duas profundidades, apenas na paleta da marca.
+- [x] Validar desktop, 360 px, movimento reduzido e build.
+- [x] Aplicar a linguagem visual escura e metálica aos 13 cards.
+- [x] Validar a grade em desktop e 360 px, foco, movimento reduzido e build.
+- [x] Alinhar exclusivamente a seção de seguros à paleta oficial verde-petróleo, dourado e off-white.
+- [x] Revalidar os 13 cards em desktop e 360 px, foco, movimento reduzido, build e tipos.
+- [x] Camada de analytics com consentimento (GA4/Meta opcionais por variável de ambiente).
+- [x] UTMs e slug de modalidade nos 13 links do cotador, preservando UTMs de campanha recebidas.
+- [x] Página /privacidade, FAQ acessível e linha de confiança com fatos comprováveis.
+- [x] Conjunto de favicons, apple-touch-icon, manifest e theme-color.
+- [x] Validar build, tipos, testes de URL, desktop, 360 px, foco e movimento reduzido.
+- [x] Atualizar os rótulos do grupo 04 sem alterar rota, slug, UTMs ou eventos.
+- [x] Substituir apenas o ícone central do hero pelo símbolo oficial PIETY.
+- [x] Validar build, tipos e apresentação em desktop e 360 px.
+- [x] Compor o escudo dourado sem check com o símbolo oficial PIETY no núcleo do hero.
+- [x] Revalidar a composição em desktop e 360 px, build e tipos.
+- [x] Rodada P0: URL pública centralizada (VITE_SITE_URL + fallback), canonical/og:url/og:site_name na home e em /privacidade.
+- [x] JSON-LD InsuranceAgency apenas com fatos publicados; sitemap.xml e robots.txt com a linha Sitemap.
+- [x] Telas 404 e de erro traduzidas para português.
+- [x] Painel de cookies funcional mesmo sem GA4/Meta configurados, com aviso claro e sem falsa escolha.
+- [x] Política de Privacidade: cookies técnicos x ferramentas opcionais; data 19/09/2026.
+- [x] .env.example, README atualizado e testes de URL/SEO somados aos testes de links.

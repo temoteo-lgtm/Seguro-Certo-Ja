@@ -1,60 +1,52 @@
-# PIETY Seguros — Cotação Online
+# PIETY Seguros | Cotação Online
 
-Portal institucional, responsivo e acessível para direcionar clientes aos fluxos oficiais de cotação da PIETY Corretora de Seguros.
+Portal institucional e de cotação da **PIETY Corretora de Seguros** (CNPJ 57.596.795/0001-60,
+registro SUSEP 242162581, Brasília/DF).
 
-**Site publicado:** [piety-seguros-cotacao.lovable.app](https://piety-seguros-cotacao.lovable.app)
+- URL publicada: https://piety-seguros-cotacao.lovable.app
+- Atendimento: WhatsApp +55 61 98412-0001
 
-## Visão geral
+## O que o projeto é
 
-- 13 modalidades de seguro organizadas por categoria.
-- Links diretos para o cotador Aggilizador.
-- Cards com efeito 3D leve, brilho e microinterações.
-- Elemento 3D em CSS no hero, sem dependências pesadas.
-- Layout mobile-first, navegação por teclado e suporte a `prefers-reduced-motion`.
-- CTA e botão flutuante para WhatsApp.
-- Identidade visual oficial da PIETY aplicada no cabeçalho e rodapé.
-- Dados cadastrais exibidos: CNPJ 57.596.795/0001-60 e registro SUSEP 242162581.
-- Sem banco de dados, autenticação ou coleta local de dados.
+Um site **sem backend e sem banco de dados próprio**: o site apresenta as 13 modalidades de
+seguro e encaminha o visitante ao cotador da PIETY (Aggilizador,
+`https://pietycorretora.aggilizador.com.br`), acrescentando UTMs e o slug da modalidade ao
+link para permitir a atribuição de origem. Os dados de cotação **não são persistidos aqui** —
+os formulários são processados pelo Aggilizador. A hospedagem pode processar dados técnicos
+de acesso e de sessão, conforme descrito na [Política de Privacidade](/privacidade).
 
-## Rodar localmente
+## Desenvolvimento
 
-O projeto é estático e não exige instalação de pacotes.
-
-```bash
-python3 -m http.server 8080
+```sh
+npm i
+npm run dev
 ```
 
-Depois, acesse `http://localhost:8080`.
+## Build, testes e verificações
 
-## Mapa dos links do cotador
+```sh
+bun run build            # build de produção
+bunx tsgo --noEmit       # verificação de tipos
+bun test                 # testes (links do cotador e configuração de URL/SEO)
+```
 
-| Modalidade | Destino |
-| --- | --- |
-| Auto | `https://pietycorretora.aggilizador.com.br/auto` |
-| Moto | `https://pietycorretora.aggilizador.com.br/auto` |
-| Caminhão | `https://pietycorretora.aggilizador.com.br/auto` |
-| Residencial | `https://pietycorretora.aggilizador.com.br/residence` |
-| Empresa | `https://pietycorretora.aggilizador.com.br/business` |
-| Condomínio | `https://pietycorretora.aggilizador.com.br/condominium` |
-| Vida Individual | `https://pietycorretora.aggilizador.com.br/life` |
-| Vida Global | `https://pietycorretora.aggilizador.com.br/lifeglobal` |
-| Acidentes Pessoais | `https://pietycorretora.aggilizador.com.br/api` |
-| Viagem | `https://pietycorretora.aggilizador.com.br/travel` |
-| Bike | `https://pietycorretora.aggilizador.com.br/bike` |
-| Aluguel | `https://pietycorretora.aggilizador.com.br/rent` |
-| Diversos | `https://pietycorretora.aggilizador.com.br/several` |
+## Variáveis de ambiente
 
-## Estrutura
+Veja `.env.example`.
 
-- `index.html`: conteúdo e semântica da página.
-- `styles.css`: identidade visual, responsividade, motion e efeitos 3D.
-- `script.js`: menu móvel, reveal on scroll e tilt progressivo.
-- `favicon.svg`: ícone da marca.
+| Variável | Obrigatória | Descrição |
+| --- | --- | --- |
+| `VITE_SITE_URL` | não | URL pública canônica usada em canonical, og:url e JSON-LD. Sem ela, usa a URL publicada padrão. |
+| `VITE_GA_MEASUREMENT_ID` | não | ID do GA4 (`G-XXXXXXX`). Vazio: o GA4 não é carregado. |
+| `VITE_META_PIXEL_ID` | não | ID numérico do Meta Pixel. Vazio: o Pixel não é carregado. |
 
-## Publicação
+Nenhum script de análise ou marketing é carregado sem **consentimento explícito** e sem um ID
+válido configurado.
 
-A versão de produção está publicada no Lovable. Este código estático também pode ser publicado diretamente em GitHub Pages, Netlify ou Cloudflare Pages. Em GitHub Pages, selecione a branch `main` e a pasta raiz nas configurações de Pages.
+## Estrutura relevante
 
-## Observação
-
-A contratação está sujeita à análise e às condições das seguradoras.
+- `src/routes/index.tsx` — home (hero, 13 modalidades, passos, FAQ, rodapé)
+- `src/routes/privacidade.tsx` — Política de Privacidade
+- `src/lib/site.ts` — origem pública canônica e JSON-LD da corretora
+- `src/lib/quote-links.ts` — montagem dos links do cotador com UTMs
+- `src/lib/analytics.ts` — consentimento e eventos (sem PII)
